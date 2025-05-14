@@ -1,0 +1,27 @@
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .cart-item {
+            transition: background-color 0.2s ease;
+        }
+        
+        .cart-item:hover {
+            background-color: #f8fafc;
+        }

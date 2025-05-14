@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    background: #f2f4f8;
+  }
+  header.main-header {
+    background: linear-gradient(90deg, #004e92, #000428);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    
+  }
+  .main-header .container {
+    max-width: 1300px;
+    margin: auto;   
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  nav.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* برای راست‌چین کردن منو */
+  }
+  nav.navbar ul li {
+    position: relative;
+  }
+  nav.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+  }
+  nav.navbar ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffce54;
+  }
+  nav.navbar ul li ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #003e7e;
+    border-radius: 8px;
+    display: none;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+  nav.navbar ul li:hover > ul {
+    display: block;
+  }
+  nav.navbar ul li ul li a {
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  nav.navbar ul li ul li a:hover {
+    background-color: #002b5c;
+  }
+
+  .contact-header-about {
+    background: var(--primary-color);
+    padding: 100px 0;
+    color: white;
+}
+
+
+
+/* -------------------------------------- */
+
+
+.container-about {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .about-text {
+    flex: 1;
+    padding: 2rem;
+    direction: rtl;
+  }
+  .about-text h2 {
+    color: #003e7e;
+    margin-bottom: 1rem;
+  }
+  .about-text p {
+    line-height: 1.9;
+    color: #333;
+    font-size: 1.1rem;
+  }
+  .about-img {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+  }
+  .about-img img {
+    max-width: 90%;
+    height: auto;
+  }

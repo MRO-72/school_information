@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #2a3f54;
+    --secondary-color: #e74b3b;
+    --text-color: #4a5f73;
+    --light-bg: #f8f9fa;
+}
+
+.contact-header {
+    background: var(--primary-color);
+    padding: 100px 0;
+    color: white;
+}
+
+.contact-method-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.contact-method-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: none;
+}
+
+.submit-btn {
+    background: var(--secondary-color);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    background: #c0392b;
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}

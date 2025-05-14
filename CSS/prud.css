@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #f8f9fc;
+    --accent-color: #2e59d9;
+    --text-color: #5a5c69;
+}
+
+body {
+    font-family: 'Vazir', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.consultation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.consultation-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.consultation-features {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.consultation-features li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.consultation-features li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+}
+
+.btn-book {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: var(--secondary-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem 0;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
