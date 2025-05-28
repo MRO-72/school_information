@@ -10,66 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Loading animation styles */
-    #loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-    
-    .loading-spinner {
-      width: 3rem;
-      height: 3rem;
-      border: 0.25em solid #f3f3f3;
-      border-top: 0.25em solid #3498db;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .loading-text {
-      margin-right: 1rem;
-      font-size: 1.2rem;
-      color: #333;
-    }
 
-    /* Scroll to top button */
-    #scrollToTop {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: none;
-      z-index: 99;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      transition: all 0.3s;
-    }
-
-    #scrollToTop:hover {
-      background-color: #2980b9;
-      transform: translateY(-3px);
-    }
-
-    #scrollToTop i {
-      font-size: 1.5rem;
-    }
   </style>
 </head>
 <body>
@@ -195,11 +136,15 @@
   </div>
   <!-- پایان اسلایدر تصاویر -->
 
-  <div class="container-about-main">
+  <div class="container-about-main ">
+   <div class="col-lg-6 col-sm-12">
     <div class="about-main-img">
-      <img src="img/Screenshot 2.png">
+      <img src="img/Screenshot 2.png"> 
     </div>
-    <div class="about-main-text">
+  </div>
+    
+   
+    <div class="about-main-text " >
       <h1> هنرستان دانش</h1>
       <h6> تمام چیزی که نیاز داری اینجاست ! </h6>
       <p>
@@ -211,6 +156,7 @@
         <a href="#moshaver-sho" class="btn-custom btn-consult">مشاوره</a>
       </div>
     </div>
+  
   </div>
   <!-- ---------------پایان درباره ما -->
 
@@ -257,9 +203,11 @@
               <li>توسط مشاوران تحصیلی</li>
               <li>پیگیری مستمر</li>
             </ul>
-            <button class="btn btn-primary btn-book" onclick="bookAppointment('مشاوره تحصیلی')">
-              <i class="fas fa-calendar-check me-2"></i> رزرو نوبت
+            <a href="404.html">
+            <button  class="btn btn-primary btn-book " onclick="bookAppointment('مشاوره تحصیلی')">
+              <i class=" fas fa-calendar-check me-2"></i> رزرو نوبت
             </button>
+          </a>
           </div>
         </div>
       </div>
