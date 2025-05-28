@@ -1,177 +1,772 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>درباره ما | دانش</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS\about.css">
-  <link rel="stylesheet" href="CSS/bootstrap.rtl.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما | مدرسه دانش</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="CSS\main.css">
-  <link rel="stylesheet" href="CSS/main.css">
-  <link rel="stylesheet" href="CSS/bootstrap.rtl.css">
-  <link rel="stylesheet" href="CSS/call.css">
 
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.8;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1588072432836-1009a79dafc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--light-color);
+            margin-bottom: 15px;
+        }
+        
+        .stats-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stats-number {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 20px;
+            width: 2px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid white;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="container">
-          <div class="logo">هنرستان دانش </div>
-          <nav class="navbar">
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">هنرستان دانش </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="panel.html">ورود / عضویت</a></li>
+          <li><a href="proud2-page.html"> سبد خرید </a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="call.html">تماس با ما</a></li>
+          <li><a href="#">گالری تصاویر</a></li>
+          <li>
+            <a href="#">رشته‌ها</a>
             <ul>
-              <li><a href="about.html">درباره ما</a></li>
-              <li><a href="call.html">تماس با ما</a></li>
-              <li><a href="#">گالری تصاویر</a></li>
-              <li>
-                <a href="#">رشته‌ها</a>
-                <ul>
-                  <li><a  href="#">شبکه و نرم افزار</a></li>
-                  <li><a href="#">الکترونیک</a></li>
-                  <li><a href="#">مکانیک</a></li>
-                  <li><a href="#">برق</a></li>
-                  <li><a href="#">گرافیک</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">خدمات</a>
-                <ul>
-                  <li><a href="singup.html">ثبت نام</a></li>
-                  <li><a href="#">فیلم‌های آموزشی</a></li>
-                  <li><a href="#">درباره اساتید</a></li>
-                  <li><a href="#">مشاوره</a></li>
-                  <li><a href="#">آزمون‌ها</a></li>
-                </ul>
-              </li>
-              <li><a href="main.HTML">خانه</a></li>
+              <li><a href="#">شبکه و نرم افزار</a></li>
+              <li><a href="#">الکترونیک</a></li>
+              <li><a href="#">مکانیک</a></li>
+              <li><a href="#">برق</a></li>
+              <li><a href="#">گرافیک</a></li>
             </ul>
-          </nav>
-        </div>
-      </header>
+          </li>
+          <li>
+            <a href="#">خدمات</a>
+            <ul>
+              <li><a href="singup.html">ثبت نام</a></li>
+              <li><a href="#">فیلم‌های آموزشی</a></li>
+              <li><a href="#">درباره اساتید</a></li>
+              <li><a href="#moshaver-sho">مشاوره</a></li>
+              <li><a href="#">آزمون‌ها</a></li>
+            </ul>
+          </li>
+          <li><a href="main.HTML">خانه</a></li>
+        </ul>
+        
+      </nav>
+    </div>
+  
+  </header>
 
-      <section class="contact-header-about text-center">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">درباره هنرستان دانش</h1>
+            <h1 class="display-4 fw-bold mb-4">درباره مدرسه دانش</h1>
+            <p class="lead mb-5">پیشرو در آموزش و پرورش نسل آینده با بیش از ۱۵ سال سابقه درخشان</p>
         </div>
     </section>
 
-<div class="container-about">
-  <div class="about-text">
-    <h2> هنرستان دانش</h2>
-    <p>
-      مدرسه دانش یک فضای پویا و خلاق برای پرورش استعدادهای نسل آینده است. هدف ما فراهم کردن محیطی آموزشی، مجهز به فناوری روز، همراه با کادری مجرب و دلسوز برای رشد فکری و مهارتی دانش‌آموزان می‌باشد. <br>
-      با تمرکز بر آموزش‌های کاربردی، تقویت مهارت‌های فردی و اجتماعی و همچنین فراهم‌سازی بسترهای پژوهش، تلاش داریم بستری برای ساختن آینده‌ای روشن‌تر فراهم کنیم.
-    </p>
-  </div>
-  <div class="about-img">
-    <img src="img\2024-02-18_10-05-00.png">
-  </div>
-</div>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">مدرسه دانش کیست؟</h2>
+                    <p class="lead">مدرسه دانش با هدف ارائه آموزش‌های باکیفیت و نوین در سال ۱۳۸۵ تأسیس شد و از آن زمان تاکنون به عنوان یکی از پیشروترین مراکز آموزشی در کشور فعالیت می‌کند.</p>
+                    <p>ما در مدرسه دانش به دنبال پرورش دانش‌آموزانی هستیم که نه تنها از نظر علمی قوی باشند، بلکه از نظر اخلاقی و شخصیتی نیز انسان‌های کاملی باشند. رویکرد ما ترکیبی از روش‌های آموزشی مدرن و ارزش‌های اصیل ایرانی-اسلامی است.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                                <span>آموزش‌های کاربردی و پروژه‌محور</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                                <span>کادر آموزشی مجرب و دلسوز</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                                <span>فضای آموزشی استاندارد و ایمن</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                                <span>برنامه‌های فوق برنامه متنوع</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="مدرسه دانش" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="danesh-footer" dir="rtl">
-  <div class="container py-5">
-    <div class="row gx-5">
-          <!-- درباره ما -->
-          <div class="col-lg-4 col-md-4 mb-4">
-            <div class="footer-section footer-section-about">
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">چرا مدرسه دانش؟</h2>
+                <p class="lead">ویژگی‌های منحصر به فرد ما که ما را از دیگران متمایز می‌کند</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>آموزش علمی پیشرفته</h3>
+                        <p>استفاده از جدیدترین متدهای آموزشی جهانی همراه با بومی‌سازی برای نیازهای دانش‌آموزان ایرانی</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>پرورش اخلاق و شخصیت</h3>
+                        <p>توجه ویژه به رشد اخلاقی، اجتماعی و شخصیتی دانش‌آموزان در کنار آموزش علمی</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>فناوری آموزشی</h3>
+                        <p>به‌کارگیری آخرین فناوری‌های آموزشی برای ایجاد تجربه یادگیری جذاب و مؤثر</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>معلمان متخصص</h3>
+                        <p>همکاری با برترین اساتید و معلمان کشور با سابقه درخشان در تدریس</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>افتخارات علمی</h3>
+                        <p>کسب ده‌ها مقام برتر در المپیادها و مسابقات علمی کشوری و بین‌المللی</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>حمایت همه‌جانبه</h3>
+                        <p>پشتیبانی و مشاوره تحصیلی و روان‌شناسی برای دانش‌آموزان و اولیا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">۱۵+</div>
+                        <p>سال تجربه</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">۱۲۰+</div>
+                        <p>معلم متخصص</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">۳۵۰۰+</div>
+                        <p>دانش‌آموز</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-item">
+                        <div class="stats-number">۹۸%</div>
+                        <p>رضایت اولیا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">تاریخچه مدرسه</h2>
+                <p class="lead">سیر تحول و پیشرفت مدرسه دانش از ابتدا تاکنون</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>تأسیس مدرسه</h4>
+                                <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>1385</p>
+                                <p>مدرسه دانش با 5 کلاس درس و 12 معلم در منطقه آموزشی تهران شروع به کار کرد.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>افتتاح ساختمان جدید</h4>
+                                <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>1388</p>
+                                <p>ساختمان جدید مدرسه با امکانات پیشرفته آموزشی در مساحت 5000 متر مربع افتتاح شد.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>کسب مقام برتر کشوری</h4>
+                                <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>1392</p>
+                                <p>دانش‌آموزان مدرسه در المپیادهای علمی کشور 5 مدال طلا کسب کردند.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>راه‌اندازی سیستم آموزش آنلاین</h4>
+                                <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>1398</p>
+                                <p>پلتفرم آموزش آنلاین مدرسه با قابلیت‌های پیشرفته راه‌اندازی شد.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>توسعه بین‌المللی</h4>
+                                <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>1401</p>
+                                <p>همکاری با مدارس معتبر بین‌المللی و جذب دانش‌آموزان خارجی آغاز شد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">تیم مدیریتی</h2>
+                <p class="lead">افراد کلیدی که مدرسه دانش را هدایت می‌کنند</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="مدیر مدرسه">
+                        <h4>دکتر مریم احمدی</h4>
+                        <p class="text-muted">مدیر مدرسه</p>
+                        <div class="social-icons">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="معاون آموزشی">
+                        <h4>دکتر علی محمدی</h4>
+                        <p class="text-muted">معاون آموزشی</p>
+                        <div class="social-icons">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="معاون پرورشی">
+                        <h4>زهرا حسینی</h4>
+                        <p class="text-muted">معاون پرورشی</p>
+                        <div class="social-icons">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="مدیر فناوری">
+                        <h4>محمد رضایی</h4>
+                        <p class="text-muted">مدیر فناوری</p>
+                        <div class="social-icons">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">نظرات اولیا و دانش‌آموزان</h2>
+                <p class="lead">تجربیات افرادی که با مدرسه دانش همراه بوده‌اند</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted mb-3"></i>
+                            <p>فرزندم پس از سه سال تحصیل در مدرسه دانش، نه تنها از نظر علمی پیشرفت چشمگیری داشته، بلکه از نظر شخصیتی نیز رشد قابل توجهی کرده است. معلمان دلسوز و روش‌های آموزشی مدرن این مدرسه واقعاً تحسین‌برانگیز است.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="والد دانش‌آموز">
+                            <div>
+                                <h5 class="mb-0">خانم محمدی</h5>
+                                <p class="text-muted mb-0">والد دانش‌آموز پایه نهم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted mb-3"></i>
+                            <p>به عنوان معلمی که در چند مدرسه تدریس کرده‌ام، باید بگویم فضای آموزشی مدرسه دانش و حمایت‌های مدیریت از معلمان واقعاً مثال‌زدنی است. این امر به ما انگیزه می‌دهد که بهترین عملکرد را داشته باشیم.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="معلم ریاضی">
+                            <div>
+                                <h5 class="mb-0">آقای حسینی</h5>
+                                <p class="text-muted mb-0">معلم ریاضی</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left text-muted mb-3"></i>
+                            <p>من به عنوان دانش‌آموز مدرسه دانش، از روش‌های تدریس تعاملی و پروژه‌محور این مدرسه بسیار راضی هستم. معلمان نه تنها به آموزش علمی توجه دارند، بلکه به رشد شخصیتی ما نیز اهمیت می‌دهند.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="دانش‌آموز">
+                            <div>
+                                <h5 class="mb-0">زهرا اکبری</h5>
+                                <p class="text-muted mb-0">دانش‌آموز پایه یازدهم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title mb-4">تماس با ما</h2>
+                    <p class="mb-5">برای دریافت اطلاعات بیشتر یا ثبت نام در مدرسه دانش، می‌توانید از راه‌های ارتباطی زیر استفاده کنید.</p>
+                    
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h5 class="mb-0">آدرس</h5>
+                                <p class="mb-0">تهران، خیابان ولیعصر، کوچه دانش، پلاک ۱۲</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <h5 class="mb-0">تلفن</h5>
+                                <p class="mb-0">۰۲۱-۸۸۵۶۷۴۳۲</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h5 class="mb-0">ایمیل</h5>
+                                <p class="mb-0">info@daneshschool.ir</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h5 class="mb-0">ساعات کاری</h5>
+                                <p class="mb-0">شنبه تا چهارشنبه: ۷:۳۰ صبح تا ۱۵:۳۰ بعدازظهر</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <h3 class="mb-4">پیام به مدرسه</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="نام و نام خانوادگی">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="آدرس ایمیل">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="شماره تماس">
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select">
+                                        <option selected>موضوع پیام</option>
+                                        <option>ثبت نام</option>
+                                        <option>سوالات آموزشی</option>
+                                        <option>پیشنهادات</option>
+                                        <option>سایر</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="متن پیام"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">ارسال پیام</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.715299402027!2d51.38982131526428!3d35.72633798018946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQzJzM0LjgiTiA1McKwMjMnMzIuMSJF!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="danesh-footer" dir="rtl">
+      <div class="container py-5">
+        <div class="row gx-5">
+              <!-- درباره ما -->
+              <div class="col-lg-4 col-md-4 mb-4">
+                <div class="footer-section footer-section-about">
+                  <h4 class="footer-heading" style="color: #ffffff;">
+                    مدرسه دانش
+                  </h4>
+                  <p class=" mt-3" style="color: #ffffff;">
+                    هنرستان دانش با بیش از نیم قرن تجربه همواره در تلاش پرورش آینده سازان ایران زمین است . این هنرستان از سال 1351 در حال کار است و حرف هایی برای خود دارد . این هنرستان در جمع 5 هنرستان نمونه دولتی کشوری است و در بین هنرستان های قم رتبه اول استان را دارد 
+                  </p>
+                  <div class="social-icons mt-4">
+                    <a href="#" class="text-decoration-none me-3">
+                      <i class="fab fa-linkedin" style="color: #ffffff;"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none me-3">
+                      <i class="fab fa-telegram" style="color: #ffffff;"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                      <i class="fab fa-instagram" style="color: #ffffff;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+                <!-- لینک‌های مفید -->
+          <div class="col-lg-2 col-md-4 mb-4">
+            <div class="footer-section">
               <h4 class="footer-heading" style="color: #ffffff;">
-مدرسه دانش              </h4>
-              <p class=" mt-3" style="color: #ffffff;">
-                هنرستان دانش با بیش از نیم قرن تجربه همواره در تلاش پرورش آینده سازان ایران زمین است . این هنرستان از سال 1351 در حال کار است و حرف هایی برای خود دارد . این هنرستان در جمع 5 هنرستان نمونه دولتی کشوری است و در بین هنرستان های قم رتبه اول استان را دارد 
-              </p>
-              <div class="social-icons mt-4">
-                <a href="#" class="text-decoration-none me-3">
-                  <i class="fab fa-linkedin" style="color: #ffffff;"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3">
-                  <i class="fab fa-telegram" style="color: #ffffff;"></i>
-                </a>
-                <a href="#" class="text-decoration-none">
-                  <i class="fab fa-instagram" style="color: #ffffff;"></i>
-                </a>
+                لینک‌های مفید
+              </h4>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-2">
+                  <a href="main.HTML" class="footer-link" style="color: #ffffff;">خانه </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="footer-link" style="color: #ffffff;"> گالری تصاویر</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="footer-link" style="color: #ffffff;">تماس با ما</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="footer-link" style="color: #ffffff;">درباره ما</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+                  <!-- محصولات -->
+                  <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-section">
+                      <h4 class="footer-heading" style="color: #ffffff;">
+                        رشته ها
+                      </h4>
+                      <ul class="list-unstyled mt-3">
+                        <li class="mb-2">
+                          <a href="#" class="footer-link" style="color: #ffffff;">برق</a>
+                        </li>
+                        <li class="mb-2">
+                          <a href="#" class="footer-link" style="color: #ffffff;">کامپیوتر</a>
+                        </li>
+                        <li class="mb-2">
+                          <a href="#" class="footer-link" style="color: #ffffff;">گرافیک </a>
+                        </li>
+                        <li class="mb-2">
+                          <a href="#" class="footer-link" style="color: #ffffff;">الکترونیک</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+  
+          <!-- تماس با ما -->
+          <div class="col-lg-4 mb-4">
+            <div class="footer-section pe-4">
+              <h4 class="footer-heading" style="color: #ffffff;">
+                تماس با مدرسه ما
+              </h4>
+              <div class="footer-content mt-3">
+                <p style="color: #ffffff;">
+                تهران، مطهری، خیابان شریعتی، ابتدای خیابان صدر، پلاک ۱۲۵
+                </p>
+                <p  style="color: #ffffff;">
+                  09117415006
+                </p>
               </div>
             </div>
           </div>
-
-            <!-- لینک‌های مفید -->
-      <div class="col-lg-2 col-md-4 mb-4">
-        <div class="footer-section">
-          <h4 class="footer-heading" style="color: #ffffff;">
-            لینک‌های مفید
-          </h4>
-          <ul class="list-unstyled mt-3">
-            <li class="mb-2">
-              <a href="main.HTML" class="footer-link" style="color: #ffffff;">خانه </a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="footer-link" style="color: #ffffff;"> گالری تصاویر</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="footer-link" style="color: #ffffff;">تماس با ما</a>
-            </li>
-            <li class="mb-2">
-              <a href="#" class="footer-link" style="color: #ffffff;">درباره ما</a>
-            </li>
-          </ul>
         </div>
-      </div>
-
-              <!-- محصولات -->
-              <div class="col-lg-2 col-md-4 mb-4">
-                <div class="footer-section">
-                  <h4 class="footer-heading" style="color: #ffffff;">
-                    رشته ها
-                  </h4>
-                  <ul class="list-unstyled mt-3">
-                    <li class="mb-2">
-                      <a href="#" class="footer-link" style="color: #ffffff;">برق</a>
-                    </li>
-                    <li class="mb-2">
-                      <a href="#" class="footer-link" style="color: #ffffff;">کامپیوتر</a>
-                    </li>
-                    <li class="mb-2">
-                      <a href="#" class="footer-link" style="color: #ffffff;">گرافیک </a>
-                    </li>
-                    <li class="mb-2">
-                      <a href="#" class="footer-link" style="color: #ffffff;">الکترونیک</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-      <!-- تماس با ما -->
-      <div class="col-lg-4 mb-4">
-        <div class="footer-section pe-4">
-          <h4 class="footer-heading" style="color: #ffffff;">
-            تماس با مدرسه ما
-          </h4>
-          <div class="footer-content mt-3">
-            <p style="color: #ffffff;">
-            تهران، مطهری، خیابان شریعتی، ابتدای خیابان صدر، پلاک ۱۲۵
-            </p>
-            <p  style="color: #ffffff;">
-              09117415006
+  
+        <!-- خط تقسیم -->
+        <hr class="footer-divider" style="border-color: rgba(255,255,255,0.2);">
+  
+        <!-- کپی رایت -->
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="copyright-text" style="color: #ffffff;">
+              کلیه حقوق مادی و معنوی متعلق به 
+              <span style="color: #ffffff;"> مدرسه دانش </span> 
+              © ۱۴۰۲ می‌باشد
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
 
-    <!-- خط تقسیم -->
-    <hr class="footer-divider" style="border-color: rgba(255,255,255,0.2);">
-
-    <!-- کپی رایت -->
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="copyright-text" style="color: #ffffff;">
-          کلیه حقوق مادی و معنوی متعلق به 
-          <span style="color: #ffffff;"> مدرسه دانش </span> 
-          © ۱۴۰۲ می‌باشد
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation for stats counter
+        function animateValue(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            let range = end - start;
+            let minTimer = 50;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            
+            stepTime = Math.max(stepTime, minTimer);
+            
+            let startTime = new Date().getTime();
+            let endTime = startTime + duration;
+            let timer;
+            
+            function run() {
+                let now = new Date().getTime();
+                let remaining = Math.max((endTime - now) / duration, 0);
+                let value = Math.round(end - (remaining * range));
+                obj.innerHTML = value + "+";
+                if (value == end) {
+                    clearInterval(timer);
+                }
+            }
+            
+            timer = setInterval(run, stepTime);
+            run();
+        }
+        
+        // Initialize counters when stats section is in view
+        const statsSection = document.querySelector('.stats-item');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateValue("years", 0, 15, 2000);
+                animateValue("teachers", 0, 120, 2000);
+                animateValue("students", 0, 3500, 2000);
+                animateValue("satisfaction", 0, 98, 2000);
+                observer.unobserve(statsSection);
+            }
+        });
+        
+        observer.observe(statsSection);
+    </script>
 </body>
 </html>

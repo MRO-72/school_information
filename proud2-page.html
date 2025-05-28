@@ -3,80 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سبد خرید - مدرسه دانش</title>
-    <!-- Bootstrap 5 RTL CSS -->
+    <title>سبد خرید - مدرسه آنلاین</title>
+    <!-- Bootstrap 5 RTL -->
     <link rel="stylesheet" href="CSS/bootstrap.rtl.css">
-  
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS\main.css">
-
+    <link rel="stylesheet" href="CSS\main.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
-        
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: #f5f7fa;
-        }
-        
         .course-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border-radius: 10px;
         }
-        
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
-        .gradient-blue {
-            background: linear-gradient(to left, #3b82f6, #1d4ed8);
-        }
-        
-        .gradient-purple {
-            background: linear-gradient(to left, #8b5cf6, #7e22ce);
-        }
-        
-        .gradient-green {
-            background: linear-gradient(to left, #10b981, #059669);
-        }
-        
-        .gradient-red {
-            background: linear-gradient(to left, #ef4444, #dc2626);
-        }
-        
-        .gradient-yellow {
-            background: linear-gradient(to left, #f59e0b, #d97706);
-        }
-        
-        .gradient-indigo {
-            background: linear-gradient(to left, #6366f1, #4f46e5);
-        }
-        
-        .course-icon {
-            font-size: 3rem;
-            color: white;
-        }
-        
         .cart-item {
-            transition: background-color 0.2s ease;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
         }
-        
-        .cart-item:hover {
-            background-color: #f8fafc;
+        .payment-card {
+            border-radius: 15px;
+            overflow: hidden;
         }
-        
-        .badge-cart {
-            position: relative;
-            top: -10px;
-            right: -5px;
+        .btn-primary {
+            background-color: #4e73df;
+            border-color: #4e73df;
+        }
+        .success-icon {
+            font-size: 5rem;
+            color: #28a745;
+        }
+        .error-icon {
+            font-size: 5rem;
+            color: #dc3545;
+        }
+        /* Filter Section Styles */
+        .filter-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .filter-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .filter-option {
+            margin-bottom: 8px;
+        }
+        .filter-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #4e73df;
+            color: white;
+            border-color: #4e73df;
+        }
+        .price-range-slider {
+            width: 100%;
+            margin-top: 15px;
+        }
+        .price-range-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .reset-filters {
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .reset-filters:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-   
     <header class="main-header">
         <div class="container">
+          <div class="logo">هنرستان دانش </div>
           <nav class="navbar">
             <ul>
               <li><a href="panel.html">ورود / عضویت</a></li>
@@ -106,237 +129,218 @@
               </li>
               <li><a href="main.HTML">خانه</a></li>
             </ul>
-            
-          </nav>
-          <div class="logo">هنرستان دانش </div>
-
+                        </nav>
         </div>
-      
-      </header>
+              </header>
 
     <!-- Main Content -->
     <div class="container my-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-dark">دوره های آموزشی پایه دوازدهم</h2>
-            <p class="text-muted">بهترین منابع آموزشی برای موفقیت در کنکور و امتحانات نهایی</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Course 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-blue d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-calculator course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">ریاضیات پایه دوازدهم</h5>
-                        <p class="card-text text-muted">دوره کامل ریاضیات پایه دوازدهم شامل تمام فصل ها</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">490,000 تومان</span>
-                            <span class="badge bg-success">پرفروش</span>
+        <!-- Shopping Cart Page -->
+        <div id="cart-page">
+            <div class="row">
+                <!-- Courses Column -->
+                <div class="col-lg-8">
+                    <!-- Filter Section -->
+                    <div class="filter-section">
+                        <div class="filter-header d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0">فیلتر محصولات</h4>
+                            <span class="reset-filters" onclick="resetFilters()">
+                                <i class="fas fa-redo me-1"></i>حذف فیلترها
+                            </span>
                         </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('ریاضیات پایه دوازدهم', 'دوره کامل ریاضیات پایه دوازدهم شامل تمام فصل ها با تدریس استاد برجسته کشوری. این دوره شامل 40 ساعت آموزش ویدیویی، جزوه PDF و آزمون های دوره ای می باشد.', '490,000 تومان', 'fas fa-calculator', 'gradient-blue')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('ریاضیات پایه دوازدهم', 490000, 'fas fa-calculator', 'gradient-blue')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-purple d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-atom course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">فیزیک پایه دوازدهم</h5>
-                        <p class="card-text text-muted">آموزش مفهومی فیزیک دوازدهم با حل مسائل کنکور</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">450,000 تومان</span>
-                            <span class="badge bg-warning text-dark">جدید</span>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('فیزیک پایه دوازدهم', 'آموزش مفهومی فیزیک دوازدهم با حل مسائل کنکور سال های اخیر. این دوره شامل 35 ساعت آموزش ویدیویی، بانک سوالات طبقه بندی شده و حل المسائل می باشد.', '450,000 تومان', 'fas fa-atom', 'gradient-purple')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('فیزیک پایه دوازدهم', 450000, 'fas fa-atom', 'gradient-purple')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-green d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-flask course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">شیمی پایه دوازدهم</h5>
-                        <p class="card-text text-muted">آموزش شیمی دوازدهم با تاکید بر مسائل استوکیومتری</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">420,000 تومان</span>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('شیمی پایه دوازدهم', 'آموزش شیمی دوازدهم با تاکید بر مسائل استوکیومتری و مفاهیم کتاب درسی. شامل 30 ساعت آموزش ویدیویی، آزمایشگاه مجازی و مجموعه ای از تست های کنکور سال های اخیر.', '420,000 تومان', 'fas fa-flask', 'gradient-green')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('شیمی پایه دوازدهم', 420000, 'fas fa-flask', 'gradient-green')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
+                        
+                        <div class="row">
+                            <!-- Category Filter -->
+                            <div class="col-md-4">
+                                <div class="filter-group">
+                                    <h5 class="filter-title">دسته بندی</h5>
+                                    <div class="filter-options">
+                                        <button class="filter-btn" onclick="filterByCategory('all')" data-category="all">همه دوره‌ها</button>
+                                        <button class="filter-btn" onclick="filterByCategory('math')" data-category="math">ریاضی</button>
+                                        <button class="filter-btn" onclick="filterByCategory('physics')" data-category="physics">فیزیک</button>
+                                        <button class="filter-btn" onclick="filterByCategory('chemistry')" data-category="chemistry">شیمی</button>
+                                        <button class="filter-btn" onclick="filterByCategory('consult')" data-category="consult">مشاوره</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Price Filter -->
+                            <div class="col-md-4">
+                                <div class="filter-group">
+                                    <h5 class="filter-title">محدوده قیمت</h5>
+                                    <input type="range" class="form-range price-range-slider" min="0" max="3000000" step="100000" value="3000000" id="priceRange">
+                                    <div class="price-range-values">
+                                        <span>0 تومان</span>
+                                        <span id="maxPriceValue">3,000,000 تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sort Filter -->
+                            <div class="col-md-4">
+                                <div class="filter-group">
+                                    <h5 class="filter-title">مرتب سازی</h5>
+                                    <select class="form-select" id="sortBy" onchange="sortCourses()">
+                                        <option value="default">پیش فرض</option>
+                                        <option value="price-asc">قیمت (کم به زیاد)</option>
+                                        <option value="price-desc">قیمت (زیاد به کم)</option>
+                                        <option value="name-asc">نام (الف-ی)</option>
+                                        <option value="name-desc">نام (ی-الف)</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Course 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-red d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-dna course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">زیست شناسی پایه دوازدهم</h5>
-                        <p class="card-text text-muted">آموزش کامل زیست شناسی با تصاویر و انیمیشن های آموزشی</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">460,000 تومان</span>
-                            <span class="badge bg-info">تخفیف ویژه</span>
+                    
+                    <h3 class="mb-4">دوره های آموزشی</h3>
+                    <div class="row" id="courses-container">
+                        <!-- Course 1 -->
+                        <div class="col-md-6 mb-4 course-item" data-category="math" data-price="1500000">
+                            <div class="card course-card h-100">
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="ریاضی">
+                                <div class="card-body">
+                                    <h5 class="card-title">دوره آموزش ریاضی</h5>
+                                    <p class="card-text">آموزش کامل ریاضیات پایه تا پیشرفته</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-success fw-bold">1,500,000 تومان</span>
+                                        <button class="btn btn-sm btn-primary" onclick="addToCart('ریاضی', 1500000, 'math')">
+                                            <i class="fas fa-cart-plus"></i> افزودن
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('زیست شناسی پایه دوازدهم', 'آموزش کامل زیست شناسی با تصاویر و انیمیشن های آموزشی کمک درسی. این دوره شامل 38 ساعت آموزش ویدیویی، فلش کارت های آموزشی و مجموعه سوالات ترکیبی کنکور می باشد.', '460,000 تومان', 'fas fa-dna', 'gradient-red')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('زیست شناسی پایه دوازدهم', 460000, 'fas fa-dna', 'gradient-red')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
+                                                
+                        <!-- Course 2 -->
+                        <div class="col-md-6 mb-4 course-item" data-category="physics" data-price="1200000">
+                            <div class="card course-card h-100">
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="فیزیک">
+                                <div class="card-body">
+                                    <h5 class="card-title">دوره آموزش فیزیک</h5>
+                                    <p class="card-text">آموزش مفهومی فیزیک با حل مسائل</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-success fw-bold">1,200,000 تومان</span>
+                                        <button class="btn btn-sm btn-primary" onclick="addToCart('فیزیک', 1200000, 'physics')">
+                                            <i class="fas fa-cart-plus"></i> افزودن
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-yellow d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-book course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">ادبیات فارسی پایه دوازدهم</h5>
-                        <p class="card-text text-muted">آموزش کامل ادبیات شامل آرایه ها، تاریخ ادبیات و قرابت معنایی</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">380,000 تومان</span>
+                                                
+                        <!-- Course 3 -->
+                        <div class="col-md-6 mb-4 course-item" data-category="consult" data-price="2000000">
+                            <div class="card course-card h-100">
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="مشاوره">
+                                <div class="card-body">
+                                    <h5 class="card-title">مشاوره تحصیلی</h5>
+                                    <p class="card-text">برنامه ریزی تحصیلی شخصی سازی شده</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-success fw-bold">2,000,000 تومان</span>
+                                        <button class="btn btn-sm btn-primary" onclick="addToCart('مشاوره', 2000000, 'consult')">
+                                            <i class="fas fa-cart-plus"></i> افزودن
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('ادبیات فارسی پایه دوازدهم', 'آموزش کامل ادبیات شامل آرایه ها، تاریخ ادبیات و قرابت معنایی با تدریس استاد برجسته. این دوره شامل 25 ساعت آموزش ویدیویی، مجموعه شعرها و نثرهای مهم و بانک تست های کنکور می باشد.', '380,000 تومان', 'fas fa-book', 'gradient-yellow')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('ادبیات فارسی پایه دوازدهم', 380000, 'fas fa-book', 'gradient-yellow')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
+                                                
+                        <!-- Course 4 -->
+                        <div class="col-md-6 mb-4 course-item" data-category="chemistry" data-price="1300000">
+                            <div class="card course-card h-100">
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="شیمی">
+                                <div class="card-body">
+                                    <h5 class="card-title">دوره آموزش شیمی</h5>
+                                    <p class="card-text">آموزش شیمی با آزمایش های جذاب</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-success fw-bold">1,300,000 تومان</span>
+                                        <button class="btn btn-sm btn-primary" onclick="addToCart('شیمی', 1300000, 'chemistry')">
+                                            <i class="fas fa-cart-plus"></i> افزودن
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Course 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card course-card h-100">
-                    <div class="gradient-indigo d-flex align-items-center justify-content-center" style="height: 200px;">
-                        <i class="fas fa-globe-americas course-icon"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">زبان انگلیسی پایه دوازدهم</h5>
-                        <p class="card-text text-muted">آموزش زبان انگلیسی با تاکید بر مهارت های reading و vocabulary</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="text-primary fw-bold">350,000 تومان</span>
-                            <span class="badge bg-pink">پیشنهاد ویژه</span>
+                                
+                <!-- Cart Column -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm sticky-top" style="top: 20px;">
+                        <div class="card-header bg-white">
+                            <h4 class="mb-0">سبد خرید شما</h4>
                         </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button onclick="showProductDetails('زبان انگلیسی پایه دوازدهم', 'آموزش زبان انگلیسی با تاکید بر مهارت های reading و vocabulary کنکور. این دوره شامل 20 ساعت آموزش ویدیویی، تکنیک های پاسخگویی به سوالات درک مطلب و مجموعه لغات مهم کنکور می باشد.', '350,000 تومان', 'fas fa-globe-americas', 'gradient-indigo')" 
-                                    class="btn btn-outline-secondary flex-grow-1">
-                                <i class="fas fa-info-circle me-1"></i> جزئیات
-                            </button>
-                            <button onclick="addToCart('زبان انگلیسی پایه دوازدهم', 350000, 'fas fa-globe-americas', 'gradient-indigo')" 
-                                    class="btn btn-primary flex-grow-1">
-                                <i class="fas fa-cart-plus me-1"></i> خرید
-                            </button>
+                        <div class="card-body">
+                            <div id="cart-items">
+                                <!-- Empty cart message -->
+                                <div class="text-center py-3" id="empty-cart-message">
+                                    <i class="fas fa-shopping-cart fa-2x text-muted mb-3"></i>
+                                    <p class="text-muted">سبد خرید شما خالی است</p>
+                                </div>
+                            </div>
+                                                        
+                            <hr>
+                                                        
+                            <!-- Order Summary -->
+                            <div class="mb-3">
+                                <h5>خلاصه سفارش</h5>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>جمع کل:</span>
+                                    <span id="cart-subtotal">0 تومان</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>تخفیف:</span>
+                                    <span class="text-success" id="cart-discount">0 تومان</span>
+                                </div>
+                                <div class="d-flex justify-content-between fw-bold mb-3">
+                                    <span>مبلغ قابل پرداخت:</span>
+                                    <span id="cart-total">0 تومان</span>
+                                </div>
+                            </div>
+                                                        
+                            <!-- Checkout Form -->
+                            <form id="checkout-form">
+                                <div class="mb-3">
+                                    <label class="form-label">نام کامل</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">شماره تماس</label>
+                                    <input type="tel" class="form-control" required>
+                                </div>
+                                                                
+                                <button type="button" class="btn btn-primary w-100" onclick="processPayment()" id="checkout-btn" disabled>
+                                    پرداخت نهایی
+                                </button>
+                            </form>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Details Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalProductName"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="modalProductIcon" class="rounded mb-4 d-flex align-items-center justify-content-center" style="height: 150px;"></div>
-                    <div class="mb-4">
-                        <h6 class="fw-bold">توضیحات محصول</h6>
-                        <p id="modalProductDescription" class="text-muted"></p>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="fw-bold text-primary" id="modalProductPrice"></span>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بازگشت</button>
-                    <button type="button" id="modalAddToCart" class="btn btn-primary">افزودن به سبد خرید</button>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Shopping Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">سبد خرید شما</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="cartItems">
-                        <div class="text-center py-5 text-muted">
-                            <i class="fas fa-shopping-cart fa-3x mb-3"></i>
-                            <p>سبد خرید شما خالی است</p>
-                        </div>
-                    </div>
-                    <div class="border-top pt-3 mt-3">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="fw-bold">جمع کل:</span>
-                            <span class="fw-bold text-primary" id="cartTotal">0 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ادامه خرید</button>
-                    <button type="button" id="checkoutButton" class="btn btn-success" disabled>پرداخت</button>
-                </div>
+                
+        <!-- Payment Success Page (Hidden by default) -->
+        <div id="success-page" class="text-center py-5" style="display: none;">
+            <div class="success-icon mb-4">
+                <i class="fas fa-check-circle"></i>
             </div>
+            <h2 class="mb-3">پرداخت با موفقیت انجام شد!</h2>
+            <p class="mb-4">سفارش شما ثبت شد و جزئیات به ایمیل شما ارسال خواهد شد.</p>
+            <a href="cart.html" class="btn btn-primary">
+                بازگشت به سبد خرید
+            </a>
+        </div>
+                
+        <!-- Payment Failed Page (Hidden by default) -->
+        <div id="failed-page" class="text-center py-5" style="display: none;">
+            <div class="error-icon mb-4">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <h2 class="mb-3">پرداخت ناموفق بود!</h2>
+            <p class="mb-4">در صورت کسر مبلغ از حساب شما، طی 72 ساعت برگشت خواهد خورد.</p>
+            <button class="btn btn-primary" onclick="showCartPage()">
+                تلاش مجدد
+            </button>
         </div>
     </div>
 
@@ -351,8 +355,7 @@
                       مدرسه دانش
                     </h4>
                     <p class=" mt-3" style="color: #ffffff;">
-                      هنرستان دانش با بیش از نیم قرن تجربه همواره در تلاش پرورش آینده سازان ایران زمین است . این هنرستان از سال 1351 در حال کار است و حرف هایی برای خود دارد . این هنرستان در جمع 5 هنرستان نمونه دولتی کشوری است و در بین هنرستان های قم رتبه اول استان را دارد 
-                    </p>
+                      هنرستان دانش با بیش از نیم قرن تجربه همواره در تلاش پرورش آینده سازان ایران زمین است . این هنرستان از سال 1351 در حال کار است و حرف هایی برای خود دارد . این هنرستان در جمع 5 هنرستان نمونه دولتی کشوری است و در بین هنرستان های قم رتبه اول استان را دارد                     </p>
                     <div class="social-icons mt-4">
                       <a href="#" class="text-decoration-none me-3">
                         <i class="fab fa-linkedin" style="color: #ffffff;"></i>
@@ -366,8 +369,8 @@
                     </div>
                   </div>
                 </div>
-    
-                  <!-- لینک‌های مفید -->
+                       
+                <!-- لینک‌های مفید -->
             <div class="col-lg-2 col-md-4 mb-4">
               <div class="footer-section">
                 <h4 class="footer-heading" style="color: #ffffff;">
@@ -389,8 +392,8 @@
                 </ul>
               </div>
             </div>
-    
-                    <!-- محصولات -->
+                         
+                <!-- محصولات -->
                     <div class="col-lg-2 col-md-4 mb-4">
                       <div class="footer-section">
                         <h4 class="footer-heading" style="color: #ffffff;">
@@ -412,8 +415,8 @@
                         </ul>
                       </div>
                     </div>
-    
-            <!-- تماس با ما -->
+                 
+                <!-- تماس با ما -->
             <div class="col-lg-4 mb-4">
               <div class="footer-section pe-4">
                 <h4 class="footer-heading" style="color: #ffffff;">
@@ -430,154 +433,287 @@
               </div>
             </div>
           </div>
-    
-          <!-- خط تقسیم -->
+               
+                <!-- خط تقسیم -->
           <hr class="footer-divider" style="border-color: rgba(255,255,255,0.2);">
-    
-          <!-- کپی رایت -->
+               
+                <!-- کپی رایت -->
           <div class="row">
             <div class="col-12 text-center">
               <p class="copyright-text" style="color: #ffffff;">
-                کلیه حقوق مادی و معنوی متعلق به 
-                <span style="color: #ffffff;"> مدرسه دانش </span> 
+                کلیه حقوق مادی و معنوی متعلق به
+                <span style="color: #ffffff;"> مدرسه دانش </span>
                 © ۱۴۰۲ می‌باشد
               </p>
             </div>
           </div>
         </div>
-      </footer> 
+      </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
     <script>
-        // Cart functionality
+        // Cart data
         let cart = [];
-        let currentProduct = null;
         
-        // DOM Elements
-        const cartButton = document.getElementById('cartButton');
-        const cartModalElement = document.getElementById('cartModal');
-        const cartModal = new bootstrap.Modal(cartModalElement);
-        const cartItems = document.getElementById('cartItems');
-        const cartTotal = document.getElementById('cartTotal');
-        const cartCount = document.getElementById('cartCount');
-        const checkoutButton = document.getElementById('checkoutButton');
-        
-        const productModalElement = document.getElementById('productModal');
-        const productModal = new bootstrap.Modal(productModalElement);
-        const modalAddToCart = document.getElementById('modalAddToCart');
-        
-        // Event Listeners
-        cartButton.addEventListener('click', () => cartModal.show());
-        modalAddToCart.addEventListener('click', addCurrentProductToCart);
-        
-        // Cart Functions
-        function renderCart() {
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="text-center py-5 text-muted">
-                        <i class="fas fa-shopping-cart fa-3x mb-3"></i>
-                        <p>سبد خرید شما خالی است</p>
-                    </div>
-                `;
-                checkoutButton.disabled = true;
-                cartTotal.textContent = '0 تومان';
-                return;
+        // Add item to cart
+        function addToCart(name, price, id) {
+            // Check if item already exists
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
             }
             
-            checkoutButton.disabled = false;
+            updateCart();
             
-            let total = 0;
-            cartItems.innerHTML = '';
+            // Show alert
+            alert(`${name} به سبد خرید اضافه شد!`);
+        }
+        
+        // Update cart display
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const checkoutBtn = document.getElementById('checkout-btn');
             
-            cart.forEach((item, index) => {
-                total += item.price;
+            if (cart.length === 0) {
+                // Show empty cart message
+                document.getElementById('empty-cart-message').style.display = 'block';
+                checkoutBtn.disabled = true;
+            } else {
+                // Hide empty cart message
+                document.getElementById('empty-cart-message').style.display = 'none';
+                                
+                // Generate cart items HTML
+                let cartItemsHTML = '';
+                let subtotal = 0;
                 
-                const itemElement = document.createElement('div');
-                itemElement.className = 'cart-item bg-light p-3 rounded mb-3 d-flex justify-content-between align-items-center';
-                itemElement.innerHTML = `
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="${item.gradient} rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                            <i class="${item.icon} text-white"></i>
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    cartItemsHTML += `
+                        <div class="cart-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6>${item.name}</h6>
+                                    <small class="text-muted">${formatPrice(item.price)}</small>
+                                </div>
+                                <span class="fw-bold">${formatPrice(itemTotal)}</span>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-outline-secondary" onclick="updateQuantity('${item.id}', -1)">-</button>
+                                    <button class="btn btn-outline-secondary" disabled>${item.quantity}</button>
+                                    <button class="btn btn-outline-secondary" onclick="updateQuantity('${item.id}', 1)">+</button>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart('${item.id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <h6 class="mb-0">${item.name}</h6>
-                            <small class="text-muted">${item.price.toLocaleString()} تومان</small>
-                        </div>
-                    </div>
-                    <button onclick="removeFromCart(${index})" class="btn btn-sm btn-outline-danger">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                `;
+                    `;
+                });
                 
-                cartItems.appendChild(itemElement);
+                cartItemsContainer.innerHTML = cartItemsHTML;
+                
+                // Calculate totals
+                const discount = 0; // Can add discount logic here
+                const total = subtotal - discount;
+                
+                // Update totals
+                document.getElementById('cart-subtotal').textContent = formatPrice(subtotal);
+                document.getElementById('cart-discount').textContent = formatPrice(discount);
+                document.getElementById('cart-total').textContent = formatPrice(total);
+                
+                // Enable checkout button
+                checkoutBtn.disabled = false;
+            }
+        }
+        
+        // Update item quantity
+        function updateQuantity(id, change) {
+            const item = cart.find(item => item.id === id);
+            
+            if (item) {
+                item.quantity += change;
+                
+                // Remove if quantity is 0 or less
+                if (item.quantity <= 0) {
+                    cart = cart.filter(item => item.id !== id);
+                }
+                
+                updateCart();
+            }
+        }
+        
+        // Remove item from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        }
+        
+        // Process payment
+        function processPayment() {
+            // Validate form
+            const form = document.getElementById('checkout-form');
+            const inputs = form.querySelectorAll('input[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
             });
             
-            cartTotal.textContent = `${total.toLocaleString()} تومان`;
-        }
-        
-        function addToCart(name, price, icon, gradient) {
-            // Check if item already exists in cart
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                alert('این محصول قبلاً به سبد خرید اضافه شده است');
+            if (!isValid) {
+                alert('لطفا تمام فیلدهای ضروری را تکمیل نمایید.');
                 return;
             }
             
-            cart.push({ name, price, icon, gradient });
-            updateCartCount();
-            renderCart();
+            // Simulate payment (80% success rate)
+            const isSuccess = Math.random() < 0.8;
             
-            // Show success message
-            alert(`محصول "${name}" به سبد خرید اضافه شد`);
+            if (isSuccess) {
+                // Show success page
+                document.getElementById('cart-page').style.display = 'none';
+                document.getElementById('success-page').style.display = 'block';
+                
+                // Clear cart
+                cart = [];
+            } else {
+                // Show failed page
+                document.getElementById('cart-page').style.display = 'none';
+                document.getElementById('failed-page').style.display = 'block';
+            }
         }
         
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartCount();
-            renderCart();
+        // Show cart page (from success/failed pages)
+        function showCartPage() {
+            document.getElementById('cart-page').style.display = 'block';
+            document.getElementById('success-page').style.display = 'none';
+            document.getElementById('failed-page').style.display = 'none';
         }
         
-        function updateCartCount() {
-            cartCount.textContent = cart.length;
+        // Format price with commas
+        function formatPrice(price) {
+            return new Intl.NumberFormat('fa-IR').format(price) + ' تومان';
         }
         
-        // Product Details Functions
-        function showProductDetails(name, description, price, icon, gradient) {
-            currentProduct = { name, description, price, icon, gradient };
+        // Filter functions
+        let currentCategory = 'all';
+        let currentMaxPrice = 3000000;
+        
+        // Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
             
-            document.getElementById('modalProductName').textContent = name;
-            document.getElementById('modalProductDescription').textContent = description;
-            document.getElementById('modalProductPrice').textContent = price;
+            // Update active button
+            document.querySelectorAll('[data-category]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
             
-            const iconElement = document.getElementById('modalProductIcon');
-            iconElement.className = `rounded mb-4 d-flex align-items-center justify-content-center ${gradient}`;
-            iconElement.innerHTML = `<i class="${icon} text-white fa-3x"></i>`;
-            
-            productModal.show();
+            applyFilters();
         }
         
-        function addCurrentProductToCart() {
-            if (!currentProduct) return;
+        // Filter by price range
+        document.getElementById('priceRange').addEventListener('input', function() {
+            currentMaxPrice = parseInt(this.value);
+            document.getElementById('maxPriceValue').textContent = formatPrice(currentMaxPrice);
+            applyFilters();
+        });
+        
+        // Sort courses
+        function sortCourses() {
+            const sortBy = document.getElementById('sortBy').value;
+            const coursesContainer = document.getElementById('courses-container');
+            const courses = Array.from(document.querySelectorAll('.course-item'));
             
-            // Extract price number from string (e.g. "490,000 تومان" -> 490000)
-            const price = parseInt(currentProduct.price.replace(/,/g, ''));
+            courses.sort((a, b) => {
+                const priceA = parseInt(a.getAttribute('data-price'));
+                const priceB = parseInt(b.getAttribute('data-price'));
+                const nameA = a.querySelector('.card-title').textContent;
+                const nameB = b.querySelector('.card-title').textContent;
+                
+                switch(sortBy) {
+                    case 'price-asc':
+                        return priceA - priceB;
+                    case 'price-desc':
+                        return priceB - priceA;
+                    case 'name-asc':
+                        return nameA.localeCompare(nameB, 'fa');
+                    case 'name-desc':
+                        return nameB.localeCompare(nameA, 'fa');
+                    default:
+                        return 0;
+                }
+            });
             
-            addToCart(currentProduct.name, price, currentProduct.icon, currentProduct.gradient);
-            productModal.hide();
+            // Re-append sorted courses
+            courses.forEach(course => {
+                coursesContainer.appendChild(course);
+            });
         }
         
-        // Checkout function
-        checkoutButton.addEventListener('click', function() {
-            if (cart.length === 0) return;
+        // Apply all filters
+        function applyFilters() {
+            const courses = document.querySelectorAll('.course-item');
             
-            alert('در حال انتقال به درگاه پرداخت...');
-            // In a real application, you would redirect to payment gateway here
-            cart = [];
-            updateCartCount();
-            renderCart();
-            cartModal.hide();
+            courses.forEach(course => {
+                const courseCategory = course.getAttribute('data-category');
+                const coursePrice = parseInt(course.getAttribute('data-price'));
+                
+                const categoryMatch = currentCategory === 'all' || courseCategory === currentCategory;
+                const priceMatch = coursePrice <= currentMaxPrice;
+                
+                if (categoryMatch && priceMatch) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+        
+        // Reset all filters
+        function resetFilters() {
+            currentCategory = 'all';
+            currentMaxPrice = 3000000;
+            
+            // Reset category buttons
+            document.querySelectorAll('[data-category]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('[data-category="all"]').classList.add('active');
+            
+            // Reset price slider
+            document.getElementById('priceRange').value = 3000000;
+            document.getElementById('maxPriceValue').textContent = formatPrice(3000000);
+            
+            // Reset sort
+            document.getElementById('sortBy').value = 'default';
+            
+            // Apply filters
+            applyFilters();
+        }
+        
+        // Initialize cart and filters on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+            
+            // Set default active category
+            document.querySelector('[data-category="all"]').classList.add('active');
         });
     </script>
 </body>

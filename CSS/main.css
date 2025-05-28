@@ -226,3 +226,10 @@ display: flex;
     font-size: 0.9rem !important;
   }
 } 
+.faq-title{
+  color: #004e92;
+  font-weight: 500;
+  font-size: 25px;
+  padding-bottom: 2rem;
+  margin-top: 10rem;
+}
